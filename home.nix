@@ -95,6 +95,8 @@
   # Neovim code editor
   programs.neovim = {
     enable = true;
+    viAlias = true;
+    vimAlias = true;
   };
   # Zsh shell alternative to bash
   programs.zsh = {
