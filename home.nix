@@ -109,7 +109,7 @@
 
     extraPackages = with pkgs; [
       lua-language-server
-      ruff-lsp
+      nil
 
       xclip
       wl-clipboard
@@ -148,14 +148,19 @@
       telescope-fzf-native-nvim
 
       cmp_luasnip
-      cmp-nvim-lsp
+      cmp-nvim-lsp # LSP as completion source | https://github.com/hrsh7th/cmp-nvim-lsp/
 
-      luasnip
+      luasnip # snippets | https://github.com/l3mon4d3/luasnip/
       friendly-snippets
 
 
-      lualine-nvim
+      lualine-nvim # Status line | https://github.com/nvim-lualine/lualine.nvim/
+
+      sqlite-lua
+      plenary-nvim
       nvim-web-devicons
+      vim-repeat
+      which-key-nvim
 
       {
         plugin = (nvim-treesitter.withPlugins (p: [
@@ -177,18 +182,18 @@
       # }
     ];
 
-    #extraLuaConfig = ''
-    #  ${builtins.readFile ./nvim/options.lua}
-    #'';
-
     extraLuaConfig = ''
       ${builtins.readFile ./nvim/options.lua}
-      ${builtins.readFile ./nvim/plugin/lsp.lua}
-      ${builtins.readFile ./nvim/plugin/cmp.lua}
-      ${builtins.readFile ./nvim/plugin/telescope.lua}
-      ${builtins.readFile ./nvim/plugin/treesitter.lua}
-      ${builtins.readFile ./nvim/plugin/other.lua}
     '';
+
+    #extraLuaConfig = ''
+    #  ${builtins.readFile ./nvim/options.lua}
+    #  ${builtins.readFile ./nvim/plugin/lsp.lua}
+    #  ${builtins.readFile ./nvim/plugin/cmp.lua}
+    #  ${builtins.readFile ./nvim/plugin/telescope.lua}
+    #  ${builtins.readFile ./nvim/plugin/treesitter.lua}
+    #  ${builtins.readFile ./nvim/plugin/other.lua}
+    #'';
   };
 
   # Zsh shell alternative to bash
