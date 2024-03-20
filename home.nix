@@ -95,8 +95,14 @@
   # Neovim code editor
   programs.neovim = {
     enable = true;
+
     viAlias = true;
     vimAlias = true;
+    vimdiffAlias = true;
+    extraLuaConfig = ''
+      -- Lua Code:
+      ${builtins.readFile ./nvim/options.lua}
+    '';
   };
 
   # Zsh shell alternative to bash
