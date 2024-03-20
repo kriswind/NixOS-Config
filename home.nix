@@ -80,6 +80,7 @@
     userEmail = "126849955+kriswind@users.noreply.github.com";
     extraConfig = {
       init.defaultBranch = "main";
+      safe.directory = "etc/nixos";
     };
   };
 
