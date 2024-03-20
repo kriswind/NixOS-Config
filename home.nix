@@ -98,6 +98,7 @@
     viAlias = true;
     vimAlias = true;
   };
+
   # Zsh shell alternative to bash
   programs.zsh = {
     enable = true;
